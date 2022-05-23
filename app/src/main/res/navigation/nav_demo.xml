@@ -12,7 +12,11 @@
         tools:layout="@layout/splash_fragment">
         <action
             android:id="@+id/toMainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"
+            app:popEnterAnim="@anim/ng_pop_enter"
+            app:popExitAnim="@anim/ng_pop_exit"/>
     </fragment>
 
     <fragment
@@ -22,7 +26,11 @@
         tools:layout="@layout/home_fragment">
         <action
             android:id="@+id/toDetailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/ng_enter"
+            app:exitAnim="@anim/ng_exit"
+            app:popEnterAnim="@anim/ng_pop_enter"
+            app:popExitAnim="@anim/ng_pop_exit" />/>
     </fragment>
 
     <fragment
@@ -36,7 +44,11 @@
             app:argType="integer" />
         <action
             android:id="@+id/toMoreDetailsFragment"
-            app:destination="@id/moreDetailsFragment" />
+            app:destination="@id/moreDetailsFragment"
+            app:enterAnim="@anim/main_enter"
+            app:exitAnim="@anim/main_exit"
+            app:popEnterAnim="@anim/ng_pop_enter"
+            app:popExitAnim="@anim/ng_pop_exit"/>
     </fragment>
 
     <fragment

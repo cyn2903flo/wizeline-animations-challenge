@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="16sp"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Proin consectetur ante vel ex pulvinar, eu hendrerit enim tristique." />
+    android:layout_height="match_parent"
+  android:background="@color/bones">
 
     <ImageView
         android:id="@+id/ivImageDetailLarge"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_margin="20dp"
         android:scaleType="fitCenter"
         android:src="@drawable/sample_img"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+      android:id="@+id/tvTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="sans-serif-black"
+      android:textSize="32sp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="32sp"
+
+      tools:text="@string/tool_title"
+      app:layout_constraintTop_toBottomOf="@id/ivImageDetailLarge"/>
     <TextView
         android:id="@+id/tvFullTextContent"
         android:layout_width="0dp"
@@ -33,7 +33,7 @@
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivImageDetailLarge"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere velit
         vitae lorem scelerisque, et elementum elit lacinia. In blandit quam sit amet malesuada varius.
         Quisque posuere lacus ut ante imperdiet, et egestas ante pharetra. Vivamus a ipsum eros.

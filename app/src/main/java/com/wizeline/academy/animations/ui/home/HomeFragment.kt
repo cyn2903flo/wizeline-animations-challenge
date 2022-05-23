@@ -1,5 +1,6 @@
 package com.wizeline.academy.animations.ui.home
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.wizeline.academy.animations.R
 import com.wizeline.academy.animations.databinding.HomeFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -20,7 +20,10 @@ class HomeFragment : Fragment() {
 
     @Inject
     lateinit var viewModel: HomeViewModel
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,6 +51,11 @@ class HomeFragment : Fragment() {
             val adapter = this.adapter as HomeAdapter
             adapter.updateDateSet(images)
             adapter.notifyDataSetChanged()
+        }
+    }
+    private fun animateAlphaLog() {
+        ObjectAnimator.ofFloat( binding.rvImages, "alpha", 1f, 0f).apply {
+            duration = 250
         }
     }
 }

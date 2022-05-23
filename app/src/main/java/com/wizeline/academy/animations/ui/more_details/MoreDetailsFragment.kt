@@ -1,11 +1,16 @@
 package com.wizeline.academy.animations.ui.more_details
 
+import android.animation.ArgbEvaluator
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.wizeline.academy.animations.R
 import com.wizeline.academy.animations.databinding.MoreDetailsFragmentBinding
 import com.wizeline.academy.animations.utils.loadImage
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +26,7 @@ class MoreDetailsFragment : Fragment() {
     lateinit var viewModel: MoreDetailsViewModel
 
     private val args: MoreDetailsFragmentArgs by navArgs()
-
+    
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,4 +43,5 @@ class MoreDetailsFragment : Fragment() {
         viewModel.content.observe(viewLifecycleOwner) { binding.tvFullTextContent.text = it }
         viewModel.fetchData(args.contentIndex)
     }
+
 }
